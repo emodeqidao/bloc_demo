@@ -21,8 +21,13 @@ class OrderPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('order'),
       ),
-      body: Container(
-        height: 100,
+      body: ListView.builder(
+        itemBuilder: (BuildContext context, int index) {
+          return Container(
+            height: 100,
+            color: Colors.primaries[index % Colors.primaries.length],
+          );
+        },
       ),
     );
   }

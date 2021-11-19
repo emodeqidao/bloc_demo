@@ -1,7 +1,7 @@
 import 'package:bloc_demo/bloc/home/view.dart';
 import 'package:bloc_demo/bloc/mine/view.dart';
 import 'package:bloc_demo/bloc/order/view.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class MainState {
   int selectIndex = 0;
@@ -11,6 +11,7 @@ class MainState {
   PageController pageController = PageController();
 
   MainState init() {
+
     List<Widget> list = [HomePage(), OrderPage(), MinePage()];
 
     return MainState()
@@ -25,5 +26,4 @@ class MainState {
     ..pageList = pageList
     ..pageController = pageController;
   }
-
 }

@@ -1,5 +1,6 @@
 class HomeState {
   HomeState init() {
+    print('home state');
     return HomeState();
   }
 
