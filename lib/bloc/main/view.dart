@@ -9,9 +9,7 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) =>
-      MainBloc()
-        ..add(InitEvent()),
+      create: (BuildContext context) => MainBloc()..add(InitEvent()),
       child: Builder(builder: (context) => _buildPage(context)),
     );
   }
@@ -54,3 +52,4 @@ class MainPage extends StatelessWidget {
     );
   }
 }
+

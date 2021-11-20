@@ -1,23 +1,18 @@
 import 'package:bloc_demo/bloc/home/view.dart';
 import 'package:bloc_demo/bloc/mine/view.dart';
 import 'package:bloc_demo/bloc/order/view.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class MainState {
-  int selectIndex = 0;
-
-  List<Widget> pageList = <Widget>[];
-
-  PageController pageController = PageController();
+  late PageController pageController;
+  late List<Widget> pageList;
+  late int selectIndex;
 
   MainState init() {
-
-    List<Widget> list = [HomePage(), OrderPage(), MinePage()];
-
     return MainState()
-    ..selectIndex = 0
-    ..pageList = list;
-
+      ..selectIndex = 0
+      ..pageController = PageController()
+      ..pageList = [HomePage(), OrderPage(), MinePage()];
   }
 
   MainState clone() {

@@ -5,10 +5,6 @@ import 'bloc.dart';
 import 'event.dart';
 import 'state.dart';
 
-import 'package:flutter/material.dart';
-
-import 'package:flutter/material.dart';
-
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -28,8 +24,8 @@ class HomePage extends StatelessWidget {
       body: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
           return Container(
-              height: 100,
-              color: Colors.primaries[index % Colors.primaries.length],
+            height: 100,
+            color: Colors.primaries[index % Colors.primaries.length],
           );
         },
       ),
