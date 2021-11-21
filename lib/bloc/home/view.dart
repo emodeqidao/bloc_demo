@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 
 import 'bloc.dart';
 import 'event.dart';
@@ -9,7 +12,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) => HomeBloc()..add(InitEvent()),
+      create: (BuildContext context) =>
+      HomeBloc()
+        ..add(InitEvent()),
       child: Builder(builder: (context) => _buildPage(context)),
     );
   }
@@ -21,15 +26,40 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('home'),
       ),
-      body: ListView.builder(
-        itemBuilder: (BuildContext context, int index) {
-          return Container(
-            height: 100,
-            color: Colors.primaries[index % Colors.primaries.length],
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
+        onPressed: () async {
+          bloc.add(GetDataEvent());
+        },
+      ),
+      body: BlocBuilder<HomeBloc, HomeState>(
+        builder: (context, state) {
+          return ListView.builder(
+            itemCount: bloc.state.list.length,
+            itemBuilder: (BuildContext context, int index) {
+              return ListTile(
+                title: Text(bloc.state.list[index].name)
+              );
+            },
           );
         },
       ),
     );
   }
 }
+
+
+class Member {
+  final String id;
+  final String name;
+
+  Member({required this.id, required this.name});
+
+  @override
+  String toString() {
+    return "$id: $name";
+  }
+}
+
 
