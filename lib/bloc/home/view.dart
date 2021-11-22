@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
         title: Text('home'),
       ),
       floatingActionButton: FloatingActionButton(
-        tooltip: 'Increment',
+        tooltip: 'getData',
         child: const Icon(Icons.add),
         onPressed: () async {
           bloc.add(GetDataEvent());

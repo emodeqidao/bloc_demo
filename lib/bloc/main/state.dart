@@ -1,3 +1,4 @@
+import 'package:bloc_demo/Tools/keep_alive_client_wrapper.dart';
 import 'package:bloc_demo/bloc/home/view.dart';
 import 'package:bloc_demo/bloc/mine/view.dart';
 import 'package:bloc_demo/bloc/order/view.dart';
@@ -12,7 +13,7 @@ class MainState {
     return MainState()
       ..selectIndex = 0
       ..pageController = PageController()
-      ..pageList = [HomePage(), OrderPage(), MinePage()];
+      ..pageList = [SXKeepAliveClientWrapper(HomePage()), SXKeepAliveClientWrapper(OrderPage()), MinePage()];
   }
 
   MainState clone() {
