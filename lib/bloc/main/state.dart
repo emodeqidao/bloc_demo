@@ -13,7 +13,7 @@ class MainState {
     return MainState()
       ..selectIndex = 0
       ..pageController = PageController()
-      ..pageList = [SXKeepAliveClientWrapper(HomePage()), SXKeepAliveClientWrapper(OrderPage()), MinePage()];
+      ..pageList = [HomePage(), sxKeepAliveClientWrapper(OrderPage()), MinePage()];
   }
 
   MainState clone() {

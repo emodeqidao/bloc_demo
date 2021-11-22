@@ -23,9 +23,8 @@ class MainPage extends StatelessWidget {
           return BottomNavigationBar(
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(label: '首页', icon: Icon(Icons.home)),
-              BottomNavigationBarItem(label: '书籍', icon: Icon(Icons.book)),
-              BottomNavigationBarItem(
-                  label: '我的', icon: Icon(Icons.perm_identity)),
+              BottomNavigationBarItem(label: '订单', icon: Icon(Icons.book)),
+              BottomNavigationBarItem(label: '我的', icon: Icon(Icons.perm_identity)),
             ],
             currentIndex: bloc.state.selectIndex,
             onTap: (index) {
@@ -43,6 +42,7 @@ class MainPage extends StatelessWidget {
             },
             itemCount: bloc.state.pageList.length,
             controller: bloc.state.pageController,
+            physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (BuildContext context, int index) {
               return bloc.state.pageList[index];
             },

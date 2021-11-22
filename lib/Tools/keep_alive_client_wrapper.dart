@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-Widget SXKeepAliveClientWrapper(Widget child) => _SXKeepAliveWidget(child);
+Widget sxKeepAliveClientWrapper(Widget child) => _SXKeepAliveWidget(child);
 
 class _SXKeepAliveWidget extends StatefulWidget {
   final Widget child;

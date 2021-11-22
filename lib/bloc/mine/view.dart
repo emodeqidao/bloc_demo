@@ -18,17 +18,19 @@ class MinePage extends StatelessWidget {
     final bloc = BlocProvider.of<MineBloc>(context);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('mine'),
-      ),
-      body: ListView.builder(
-        itemBuilder: (BuildContext context, int index) {
-          return Container(
-            height: 100,
-            color: Colors.primaries[index % Colors.primaries.length],
-          );
-        },
-      ),
+
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            title: Text('mine'),
+            centerTitle: true,
+            // leading: Text('leading'),
+            actions: [
+              MaterialButton(onPressed: () => print('ckicl'), child: Text('action1'),)
+            ],
+          )
+        ],
+      )
     );
   }
 }
